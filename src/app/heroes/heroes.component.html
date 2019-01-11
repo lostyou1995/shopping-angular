@@ -1,0 +1,6 @@
+<div class="content">
+  <div class='item' *ngFor='let hero of heroes'>
+    <span (click)='onSelect(hero)'>{{hero.name}}</span>
+    <img src="/assets/image/{{hero.image}}"/>
+  </div>
+</div>

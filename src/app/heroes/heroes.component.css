@@ -1,0 +1,32 @@
+.content {
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    position: relative;
+    border: 1px solid transparent;
+    margin: 0px 11px 10px 11px;
+    width: 275px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.item > span {
+    position: absolute;
+    bottom: 20px;
+    font-size: 25px;
+}
+
+.item > span:hover {
+    cursor: pointer;
+}
+
+.item > img {
+    max-width: 250px;
+    margin: auto;
+}
