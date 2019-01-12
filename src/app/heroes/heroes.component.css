@@ -1,5 +1,5 @@
 .content {
-    max-width: 70%;
+    max-width: 90%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +10,7 @@
     border: 1px solid transparent;
     margin: 0px 11px 10px 11px;
     width: 275px;
-    height: 350px;
+    height: 400px;
     display: flex;
     justify-content: center;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
@@ -18,7 +18,8 @@
 
 .item > span {
     position: absolute;
-    bottom: 20px;
+    bottom: 120px;
+    left: 10px;
     font-size: 25px;
 }
 
@@ -26,7 +27,79 @@
     cursor: pointer;
 }
 
-.item > img {
+
+/*Format button*/
+button {
+    border-radius: 50%;
+    transition: box-shadow .3s;
+    position: absolute;
+    background: transparent;
+    bottom: 15px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    outline:none;
+
+}
+
+button.add-to-cart {
+    border: 2px solid #5B85AA;
+    color: #414770;
+    transition:.2s all;
+    box-shadow: 0px 5px 15px #5B85AA;
+}
+
+button.icon-share,
+button.icon-favorite {
+    right: 10px;
+    border: 2px solid #F46036;
+    color: #F46036;
+    transition:.2s all;
+    box-shadow: 0px 5px 15px #F46036;
+}
+
+button.icon-favorite {
+    transition:.2s all;
+    box-shadow: 0px 5px 15px #F46036;
+    left: 10px;
+    
+}
+
+button.add-to-cart:hover {
+    background:#5B85AA;
+    color:#171123;
+    transform:translateY(-7px);
+    box-shadow: 0px 5px 15px #171123;
+}
+
+button.icon-favorite:hover {
+    transform:translateY(-7px);
+    box-shadow: 0px 5px 15px #F46036;
+}
+
+button.icon-share:hover {
+    transform:translateY(-7px);
+    box-shadow: 0px 5px 15px #F46036;
+}
+/*---------------------------*/
+
+/*Format price*/
+.item > div.format-price {
+    position: absolute;
+    display: flex;
+    bottom: 70px;
+    left: 10px;
+}
+
+p.price {
+    font-weight: bold;
+}
+/*---------------------------*/
+
+
+img.image-product {
+    top: 0px;
     max-width: 250px;
     margin: auto;
+    position: absolute;
 }

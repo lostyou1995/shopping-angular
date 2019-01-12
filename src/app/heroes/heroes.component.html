@@ -1,6 +1,21 @@
 <div class="content">
   <div class='item' *ngFor='let hero of heroes'>
-    <span (click)='onSelect(hero)'>{{hero.name}}</span>
-    <img src="/assets/image/{{hero.image}}"/>
+    <img class="image-product" src="/assets/image/{{hero.image}}"/>
+    <span (click)='onSelect(hero, "VIEW_DETAIL")'>{{hero.name}}</span>
+    <div class="format-price">
+      <p class="price">${{hero.price*2}}</p>
+    </div>
+
+    <button class="icon-favorite">
+      <i (click)='setFavorite($event)' class='far fa-heart fa-2x'></i>
+    </button>
+
+    <button class="icon-share">
+      <i class="fas fa-share-alt fa-2x"></i>
+    </button>
+
+    <button class="add-to-cart">
+      <i (click)='onSelect(hero, "ADD_TO_CART")' class="fas fa-shopping-cart fa-2x"></i>
+    </button>
   </div>
 </div>
