@@ -18,14 +18,6 @@ export class HeaderComponent implements OnInit {
   }
 
   scroll(event) {
-    var elementHeader = document.getElementById('header');
-    var sticky = elementHeader.offsetTop;
-    if (window.pageYOffset > sticky) {
-      elementHeader.classList.add('sticky');
-      console.log("add class", elementHeader.classList);
-    } else {
-      elementHeader.classList.remove('sticky');
-    }
-    console.log("scroll", sticky);
-  };
+    console.log("scroll");
+  }
 }

@@ -34,5 +34,47 @@ export const Heroes: Hero[] = [
         name: 'Charmeleon',
         image: 'charmeleon.png',
         description: 'Charmeleon'
+    },
+    {
+        id: 3,
+        price: 29,
+        name: 'Squirtle',
+        image: 'squirtle.png',
+        description: 'Squirtle'
+    },
+    {
+        id: 4,
+        price: 25,
+        name: 'Bulbasaur',
+        image: 'bulbasaur.png',
+        description: 'Bulbasaur'
+    },
+    {
+        id: 5,
+        price: 10,
+        name: 'Charmeleon',
+        image: 'charmeleon.png',
+        description: 'Charmeleon'
+    },
+    {
+        id: 3,
+        price: 29,
+        name: 'Squirtle',
+        image: 'squirtle.png',
+        description: 'Squirtle'
+    },
+    {
+        id: 4,
+        price: 25,
+        name: 'Bulbasaur',
+        image: 'bulbasaur.png',
+        description: 'Bulbasaur'
+    },
+    {
+        id: 5,
+        price: 10,
+        name: 'Charmeleon',
+        image: 'charmeleon.png',
+        description: 'Charmeleon'
     }
 ]
