@@ -52,21 +52,69 @@ div.header-right {
     right: 5%;
 }
 
-div.header-right ul li i{
+div.header-right>.menu{
+    display: flex;
+}
+
+div.menu span i{
     font-size: 20px;
 }
 
-li.number-quantity {
+div.number-quantity,
+div.user-login-info {
+    width: 70px;
+    display: flex;
+    height: 59px;
+    border-right: 1px solid #ebebeb;
+    
+}
+
+div.number-quantity {
     position: relative;
 }
 
-li.number-quantity>label {
+div.user-login-info {
+    border: none;
+}
+
+div.number-quantity>span,
+div.user-login-info>span {
+    margin: auto;
+    max-width: 70px;
+}
+
+div.number-quantity>span>label {
     position: absolute;
-    top: -10px;
+    top: 10px;
     font-size: 15px;
     color: #F46036;
 }
 
 div.banner {
     height: 300px;
+}
+
+/*Format search*/
+div.area-search {
+    display: flex;
+    height: 59px;
+    border-right: 1px solid #ebebeb;
+}
+
+div.area-search>span input {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-left: 1px solid #ebebeb;
+    padding: 0 15px 0 60px;
+}
+
+div.area-search>span {
+    display: flex;
+    position: relative;
+}
+div.area-search>span i {
+    position: absolute;
+    right: 10px;
+    top: 20px;
 }

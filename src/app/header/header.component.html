@@ -17,27 +17,36 @@
     </div>
     <div class="header-right">
         <div class="menu">
-            <ul>
-                <li>
-                  <input type="text" placeholder="Search,..."/>
-                    <i class="fas fa-search"></i>
-                </li>
-                <li class="number-quantity">
-                  <i class='far fa-heart'></i>
-                  <label>5</label>
-                </li>
 
-                <li>
-                  <i class='fas fa-user'></i>
-                </li>
+          <div class="area-search">
+            <span>
+              <input type='text' placeholder='search,...' (@transitonInput.done) ='transitionDone($event)' [@transitonInput]='state' (blur)='onUnseletedInput($event)' (click)='onSeletedInput($event)'/>
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
 
-                <li class="number-quantity">
-                  <i class="fas fa-shopping-bag"></i>
-                  <label>3</label>
-                </li>
+          <div class="number-quantity">
+            <span>
+              <i class='fas fa-heart'></i>
+              <label>5</label>
+            </span>
+          </div>
 
-              </ul>
+          <div class="number-quantity">
+            <span>
+              <i class="fas fa-shopping-bag"></i>
+              <label>3</label>
+            </span>
+          </div>
+
+          <div class="user-login-info">
+              <span>
+                <i class='fas fa-user'></i>
+              </span>
+          </div>
+
         </div>
+
     </div>
   </div>
 </div>

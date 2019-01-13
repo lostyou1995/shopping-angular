@@ -1,12 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import {transition, state, trigger, style, animate} from '@angular/animations';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  animations: [
+    trigger('transitonInput', [
+      state('small', style({
+        
+      })),
+      state('large', style({
+        width: '400px',
+      })),
+      transition('small => large', animate('350ms ease-in')),
+      transition('large => small', animate('350ms ease-in'))
+
+    ]),
+  ]
 })
+
 export class HeaderComponent implements OnInit {
-  isScroll: boolean = false;
+  state: string = 'small'
+
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +34,19 @@ export class HeaderComponent implements OnInit {
   }
 
   scroll(event) {
-    console.log("scroll");
+    console.log("scroll", event.target.type);
+  }
+
+  onSeletedInput(event) {
+    this.state = (this.state === 'small' ? 'large' : 'small');
+  }
+
+  onUnseletedInput(event) {
+    this.state = (this.state === 'large' ? 'small' : 'large');
+  }
+
+  transitionDone(event) {
+    var textPlaceHolder = (this.state === 'large' ? '' : 'search,...');
+    event.element.placeholder = textPlaceHolder;
   }
 }
