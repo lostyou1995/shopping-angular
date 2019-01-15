@@ -16,14 +16,18 @@
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }
 
-.item > span {
+.item > a > span {
     position: absolute;
     bottom: 120px;
     left: 10px;
     font-size: 25px;
 }
 
-.item > span:hover {
+.item > a {
+    color: #5B85AA;
+}
+
+.item > a >span:hover {
     cursor: pointer;
 }
 

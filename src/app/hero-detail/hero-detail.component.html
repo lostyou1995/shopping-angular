@@ -1,3 +1,17 @@
-<div *ngIf="hero">
-    <h2>{{hero.name | uppercase}} Details</h2>
+<div class="content" *ngIf="hero">
+    <div class="left-content">
+        <img src="/assets/image/{{hero.image}}"/>
+    </div>
+    <div class="center-content">
+
+        <h2>{{hero.name}}</h2>
+        <div>
+            <span>size: </span>
+            <span>price: ${{hero.price}}</span>
+            <p>{{hero.description}}</p>
+        </div>    
+    </div>
+    <div class="right-content">
+            <p>San pham vua xem</p>
+    </div>
 </div>

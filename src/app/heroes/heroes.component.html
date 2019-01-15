@@ -1,7 +1,9 @@
 <div class="content">
   <div class='item' *ngFor='let hero of heroes'>
     <img class="image-product" src="/assets/image/{{hero.image}}"/>
-    <span (click)='onSelect(hero, "VIEW_DETAIL")'>{{hero.name}}</span>
+    <a routerLink='/heroes-detail/{{hero.id}}'>
+      <span (click)='onSelect(hero, "VIEW_DETAIL")'>{{hero.name}}</span>
+    </a>
     <div class="format-price">
       <p class="price">${{hero.price*2}}</p>
     </div>
@@ -19,4 +21,3 @@
     </button>
   </div>
 </div>
-
