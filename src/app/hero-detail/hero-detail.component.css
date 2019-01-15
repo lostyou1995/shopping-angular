@@ -2,31 +2,35 @@
     max-width: 80%;
     margin: auto;
     display: flex;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
-}
-
-.content > div {
-    flex: 1;
-
-}
-
-div.center-content {
-    display: flex;
+    flex-direction: row;
 }
 
 div.left-content {
-
-    margin: 0;
-    display: flex;
+    flex-grow: 0;
+    flex-basis: 300px;
     height: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }
-div.left-content img {
-    margin: auto;
-}
 
-
-div.center-content {
+div.right-content {
+    margin-left: 10px;
+    height: auto;
+    flex-grow: 1;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    div.right-content {
+        margin-top: 10px;
+        margin-left: 0;
+        flex-flow: 1;
+    }
+    div.left-content {
+        flex-grow: 1;
+    }
 }

@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroesComponent,
     HeaderComponent,
     HeroDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

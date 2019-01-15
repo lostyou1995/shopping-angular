@@ -1,0 +1,52 @@
+div.footer {
+    margin: 50px 0px 50px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+h2 {
+    margin: 20px 0px 0px 0px;
+}
+
+.footer-left,
+.footer-right,
+.footer-center {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-right > div,
+.footer-left > div,
+.footer-center > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-right > div > a,
+.footer-left > div > a,
+.footer-center > div > a {
+    margin: 10px 0px 0px 0px;
+}
+
+.footer-right > div > a > i,
+.footer-center > div > a > i {
+    margin-right: 10px;
+}
+hr {
+    border: 1px solid #DDD;
+    margin-top: 20px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    div.footer {
+        display: flex;
+        flex-direction: row;
+        font-size: 80%;
+    }
+}
