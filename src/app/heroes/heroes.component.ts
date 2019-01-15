@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { Heroes } from '../mock-heroes';
+import { HeroService} from '../hero.service';
 
 enum Action {
   AddToCart = "ADD_TO_CART",
@@ -14,11 +15,13 @@ enum Action {
 })
 
 export class HeroesComponent implements OnInit {
-  heroes = Heroes;
+  heroes: Hero[];
+  selectedHero: any;
 
-  constructor() { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
+    this.getHeroes();
   }
 
   onSelect(hero: Hero, type: String): void {
@@ -27,7 +30,7 @@ export class HeroesComponent implements OnInit {
         console.log("add to cart");
         break;
       case Action.ViewDetail:
-        console.log("View detail");
+        this.selectedHero = hero;
         break;
     }
   }
@@ -43,7 +46,10 @@ export class HeroesComponent implements OnInit {
       classList.remove('fas');
       classList.add('far');
     }
-
   }
 
+  getHeroes() {
+    this.heroService.getHeroes()
+    .subscribe(heroes => this.heroes = heroes);
+  }
 }
