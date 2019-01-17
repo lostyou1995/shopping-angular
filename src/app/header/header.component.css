@@ -90,10 +90,6 @@ div.number-quantity>span>label {
     color: #F46036;
 }
 
-div.banner {
-    height: 300px;
-}
-
 /*Format search*/
 div.area-search {
     display: flex;
