@@ -3,12 +3,53 @@
         <img src="/assets/image/{{hero.image}}"/>
     </div>
     <div class="right-content">
+        <div class="content-detail">
+            <h2>{{hero.name}}</h2>
+            <div class="rating">
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>4.4 (320 reviews)</span>
+                </div>
+            </div>
+            
+            <div class="price">
+                <span>${{hero.price}}</span>
+            </div> 
+            
+            <div class="color">
+                <h3>Color</h3>
+                <div class="item-color">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
 
-        <h2>{{hero.name}}</h2>
-        <div>
-            <span>size: </span>
-            <span>price: ${{hero.price}}</span>
-            <p>{{hero.description}}</p>
-        </div>    
+            <div class="status">
+                <h3>Status: </h3>
+                <span>Out of Stock</span>
+            </div>
+
+            <div class="quantity">
+                    <h3>Quantity</h3>
+                    
+                    <div class="update-quantity">
+                        <button (click)="onMinus($event)" id="plus">+</button>
+                            <input type="number" (keyup)="onKey($event)">
+                        <button (click)="onPlus($event)" id="minus">-</button>
+                    </div>
+            </div>
+
+            <div>
+                <button id="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                </button> 
+            </div>
+        </div> 
     </div>
 </div>

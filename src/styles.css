@@ -18,6 +18,10 @@ h1 {
     -o-animation: fadein 2s; /* Opera < 12.1 */
     animation: fadein 2s;
   }
+  a {
+    color: #039be5;
+    text-decoration: none;
+  }
 
   @keyframes fadein {
     from { opacity: 0; }

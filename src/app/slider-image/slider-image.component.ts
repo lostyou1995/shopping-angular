@@ -13,10 +13,6 @@ export class SliderImageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
-    $(document).ready(function(){
-      $('.slider').slider();
-    });
 
   }
 

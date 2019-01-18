@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
-
+  lastValue: any;
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
@@ -20,6 +20,22 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getHeroFromID();
+  }
+
+  onKey(event) {
+    if (event.target.value.length > 3) {
+      event.target.value = this.lastValue;
+      return false;
+    }
+    this.lastValue = event.target.value;
+  }
+
+  onMinus(event) {
+    console.log('event minus', event);
+  }
+
+  onPlus() {
+    console.log('event plus', event);
   }
 
   getHeroFromID() {

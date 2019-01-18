@@ -5,4 +5,5 @@ export class Hero {
     image: String;
     description: String;
     quantity: Number;
+    status: Boolean;
 }

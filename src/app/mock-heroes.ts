@@ -6,7 +6,8 @@ export const Heroes: Hero[] = [
         name: 'Charmander',
         image: 'charmander.png',
         quantity: 5,
-        description: 'Charmander'
+        description: 'Charmander',
+        status: true
     },
     {
         id: 2,
@@ -14,7 +15,8 @@ export const Heroes: Hero[] = [
         name: 'Pikachu',
         image: 'pikachu.png',
         quantity: 8,
-        description: 'Charmander'
+        description: 'Charmander',
+        status: false
     },
     {
         id: 3,
@@ -22,7 +24,8 @@ export const Heroes: Hero[] = [
         name: 'Squirtle',
         quantity: 10,
         image: 'squirtle.png',
-        description: 'Squirtle'
+        description: 'Squirtle',
+        status: false
     },
     {
         id: 4,
@@ -30,15 +33,17 @@ export const Heroes: Hero[] = [
         quantity: 7,
         name: 'Bulbasaur',
         image: 'bulbasaur.png',
-        description: 'Bulbasaur'
+        description: 'Bulbasaur',
+        status: true
     },
     {
-        id: 5,
+        id: 11,
         price: 10,
         quantity: 4,
         name: 'Charmeleon',
         image: 'charmeleon.png',
-        description: 'Charmeleon'
+        description: 'Charmeleon',
+        status: false
     },
     {
         id: 3,
@@ -46,46 +51,52 @@ export const Heroes: Hero[] = [
         name: 'Squirtle',
         quantity: 6,
         image: 'squirtle.png',
-        description: 'Squirtle'
+        description: 'Squirtle',
+        status: true
     },
     {
-        id: 4,
+        id: 9,
         price: 25,
         name: 'Bulbasaur',
         image: 'bulbasaur.png',
         quantity: 10,
-        description: 'Bulbasaur'
+        description: 'Bulbasaur',
+        status: false
     },
     {
-        id: 5,
+        id: 8,
         price: 10,
         name: 'Charmeleon',
         quantity: 5,
         image: 'charmeleon.png',
-        description: 'Charmeleon'
+        description: 'Charmeleon',
+        status: false
     },
     {
-        id: 3,
+        id: 31,
         price: 29,
         quantity: 11,
         name: 'Squirtle',
         image: 'squirtle.png',
-        description: 'Squirtle'
+        description: 'Squirtle',
+        status: true
     },
     {
-        id: 4,
+        id: 14,
         price: 25,
         quantity: 3,
         name: 'Bulbasaur',
         image: 'bulbasaur.png',
-        description: 'Bulbasaur'
+        description: 'Bulbasaur',
+        status: false
     },
     {
-        id: 5,
+        id: 25,
         price: 10,
         quantity: 9,
         name: 'Charmeleon',
         image: 'charmeleon.png',
-        description: 'Charmeleon'
+        description: 'Charmeleon',
+        status: false
     }
 ]
