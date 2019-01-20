@@ -21,7 +21,7 @@ ul {
 
 li {
     font-weight: 600;
-    margin: 20px;
+    padding: 20px;
     opacity: 0.7;
 }
 
@@ -35,7 +35,7 @@ div.logo {
     margin-bottom: auto;
 }
 
-div.content-header{
+div.content-header {
     margin-left: 5%;
     display: flex;
     position: relative;
@@ -50,6 +50,41 @@ div.header-right {
     position: absolute;
     display: flex;
     right: 5%;
+}
+
+li.has-submenu {
+    position: relative;
+}
+
+li.has-submenu:hover .sub-menu {
+    display: block;
+}
+
+ul.sub-menu {
+    box-shadow: 0 1px 5px rgba(0,0,0,.1);
+    position: absolute;
+    display: none;
+    background: #fff;
+    width: 130px;
+    height: auto;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    padding: 10px 0;
+}
+
+.sub-menu > li {
+    padding: 0;
+    left: 0;
+    top: 100%;
+}
+.sub-menu > li > a {
+    padding: 8px 16px;
+    font-size: 14px;
+    display: block;
+    border-bottom: 1px solid rgba(242,244,248,.7); 
+} 
+.sub-menu li:last-child a {
+    border-bottom: none;
 }
 
 div.header-right>.menu{
@@ -81,11 +116,19 @@ div.number-quantity>span,
 div.user-login-info>span {
     margin: auto;
     max-width: 70px;
+    opacity: 0.7;
+}
+
+div.number-quantity>span:hover,
+div.user-login-info>span:hover {
+    cursor: pointer;
+    opacity: 1;
 }
 
 div.number-quantity>span>label {
     position: absolute;
     top: 10px;
+    font-weight: 600;
     font-size: 15px;
     color: #F46036;
 }

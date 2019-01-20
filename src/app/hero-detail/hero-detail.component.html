@@ -39,7 +39,7 @@
                     
                     <div class="update-quantity">
                         <button (click)="onMinus($event)" id="plus">+</button>
-                            <input type="number" (keyup)="onKey($event)">
+                            <input type="number" (keyup)="onKey($event)" value="{{lastValue}}">
                         <button (click)="onPlus($event)" id="minus">-</button>
                     </div>
             </div>

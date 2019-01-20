@@ -1,23 +1,36 @@
+
 <div class="content">
-  <div class='item' *ngFor='let hero of heroes'>
-    <img class="image-product" src="/assets/image/{{hero.image}}"/>
-    <a routerLink='/heroes-detail/{{hero.id}}'>
-      <span (click)='onSelect(hero, "VIEW_DETAIL")'>{{hero.name}}</span>
-    </a>
-    <div class="format-price">
-      <p class="price">${{hero.price*2}}</p>
+  <div class="left-content">
+    <ul>
+      <li>test 111</li>
+      <li>test 10</li>
+      <li>test 12</li>
+      <li>test 13</li>
+      <li>test 14</li>
+      <li>test 13</li>
+    </ul>
+  </div>
+  <div class="right-content">
+    <div class='item' *ngFor='let hero of heroes'>
+      <img class="image-product" src="/assets/image/{{hero.image}}"/>
+      <a routerLink='/heroes-detail/{{hero.id}}'>
+        <span (click)='onSelect(hero, "VIEW_DETAIL")'>{{hero.name}}</span>
+      </a>
+      <div class="format-price">
+        <p class="price">${{hero.price*2}}</p>
+      </div>
+
+      <button class="icon-favorite">
+        <i (click)='setFavorite($event)' class='far fa-heart fa-2x'></i>
+      </button>
+
+      <button class="icon-share">
+        <i class="fas fa-share-alt fa-2x"></i>
+      </button>
+
+      <button class="add-to-cart">
+        <i (click)='onSelect(hero, "ADD_TO_CART")' class="fas fa-shopping-cart fa-2x"></i>
+      </button>
     </div>
-
-    <button class="icon-favorite">
-      <i (click)='setFavorite($event)' class='far fa-heart fa-2x'></i>
-    </button>
-
-    <button class="icon-share">
-      <i class="fas fa-share-alt fa-2x"></i>
-    </button>
-
-    <button class="add-to-cart">
-      <i (click)='onSelect(hero, "ADD_TO_CART")' class="fas fa-shopping-cart fa-2x"></i>
-    </button>
   </div>
 </div>

@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
-  lastValue: any;
+  lastValue: any = 1;
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
@@ -30,18 +30,20 @@ export class HeroDetailComponent implements OnInit {
     this.lastValue = event.target.value;
   }
 
-  onMinus(event) {
-    console.log('event minus', event);
+  onMinus() {
+    this.lastValue = parseInt(this.lastValue, 10) + 1;
   }
 
   onPlus() {
-    console.log('event plus', event);
+    this.lastValue = parseInt(this.lastValue, 10) - 1;
+    if (this.lastValue < 0) {
+      this.lastValue = 0;
+    }
   }
 
   getHeroFromID() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id);
-
+    console.log("Get hero from ID");
+    const id = + this.route.snapshot.paramMap.get('id');
     this.heroService.getHeroFromID(id)
     .subscribe(hero =>this.hero = hero);
   }
