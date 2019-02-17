@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Hero } from './hero';
 import { Heroes} from './mock-heroes';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
 
-  constructor() { }
+    private quantity = new BehaviorSubject(0);
+    currentQuantity = this.quantity.asObservable();
 
-  getHeroes(): Observable<Hero[]> {
-    return of(Heroes);
-  }
+    constructor() { }
 
-  getHeroFromID(id: number): Observable<Hero> {
-    return of(Heroes.find(hero => hero.id === id));
-  }
+    getHeroes(): Observable<Hero[]> {
+        return of(Heroes);
+    }
 
+    getHeroFromID(id: number): Observable<Hero> {
+        return of(Heroes.find(hero => hero.id === id));
+    }
+
+    updateQuantity(quantityNew: number) {
+        this.quantity.next(quantityNew);
+    }
 }

@@ -1,0 +1,32 @@
+div.number-quantity>span {
+    margin: auto;
+    max-width: 70px;
+    opacity: 0.7;
+}
+
+div.number-quantity {
+    position: relative;
+}
+
+div.number-quantity>span:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+div.number-quantity>span>label {
+    position: absolute;
+    top: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #F46036;
+}
+
+div.number-quantity {
+    width: 70px;
+    display: flex;
+    height: 59px;
+    border-right: 1px solid #ebebeb;
+}
+i {
+    font-size: 20px;
+}

@@ -10,6 +10,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderImageComponent } from './slider-image/slider-image.component';
+import { UpdateQuantityCartComponent } from './update-quantity-cart/update-quantity-cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SliderImageComponent } from './slider-image/slider-image.component';
     HeroDetailComponent,
     DashboardComponent,
     FooterComponent,
-    SliderImageComponent
+    SliderImageComponent,
+    UpdateQuantityCartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {transition, state, trigger, style, animate} from '@angular/animations';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-header',
@@ -21,32 +22,32 @@ import {transition, state, trigger, style, animate} from '@angular/animations';
 })
 
 export class HeaderComponent implements OnInit {
-  state: string = 'small'
+    state: string = 'small'
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-    window.addEventListener('scroll', this.scroll, true);
-  }
+    ngOnInit() {
+        window.addEventListener('scroll', this.scroll, true);
+    }
 
-  ngOnDestry() {
-    window.removeEventListener('scroll', this.scroll, true);
-  }
+    ngOnDestry() {
+        window.removeEventListener('scroll', this.scroll, true);
+    }
 
-  scroll(event) {
-    console.log("scroll", event.target.type);
-  }
+    scroll(event) {
+        console.log("scroll", event.target.type);
+    }
 
-  onSeletedInput(event) {
-    this.state = (this.state === 'small' ? 'large' : 'small');
-  }
+    onSeletedInput(event) {
+        this.state = (this.state === 'small' ? 'large' : 'small');
+    }
 
-  onUnseletedInput(event) {
-    this.state = (this.state === 'large' ? 'small' : 'large');
-  }
+    onUnseletedInput(event) {
+        this.state = (this.state === 'large' ? 'small' : 'large');
+    }
 
-  transitionDone(event) {
-    var textPlaceHolder = (this.state === 'large' ? '' : 'search,...');
-    event.element.placeholder = textPlaceHolder;
-  }
+    transitionDone(event) {
+      var textPlaceHolder = (this.state === 'large' ? '' : 'search,...');
+      event.element.placeholder = textPlaceHolder;
+    }
 }
