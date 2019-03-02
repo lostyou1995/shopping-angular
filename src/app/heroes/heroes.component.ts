@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { Heroes } from '../mock-heroes';
 import { HeroService} from '../hero.service';
 
 enum Action {
@@ -48,8 +47,7 @@ export class HeroesComponent implements OnInit {
     }
   }
 
-  getHeroes() {
-    this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
-  }
+     getHeroes() {
+          this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+     }
 }

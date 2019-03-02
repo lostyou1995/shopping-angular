@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import * as $ from 'jquery-ui';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -13,22 +13,23 @@ import { SliderImageComponent } from './slider-image/slider-image.component';
 import { UpdateQuantityCartComponent } from './update-quantity-cart/update-quantity-cart.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    HeaderComponent,
-    HeroDetailComponent,
-    DashboardComponent,
-    FooterComponent,
-    SliderImageComponent,
-    UpdateQuantityCartComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeroesComponent,
+        HeaderComponent,
+        HeroDetailComponent,
+        DashboardComponent,
+        FooterComponent,
+        SliderImageComponent,
+        UpdateQuantityCartComponent,
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        BrowserAnimationsModule
+    ],
+    providers: [HttpClientModule],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

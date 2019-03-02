@@ -10,9 +10,8 @@ import { Location } from '@angular/common';
     styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-    @Input() hero: Hero;
+    @Input() hero: any;
     lastValue: number = 0;
-
     constructor(
         private route: ActivatedRoute,
         private heroService: HeroService,
@@ -20,7 +19,6 @@ export class HeroDetailComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-
         this.getHeroFromID();
         this.heroService.currentQuantity.subscribe(quantity => this.lastValue = quantity);
         this.lastValue = 1;
@@ -51,11 +49,13 @@ export class HeroDetailComponent implements OnInit {
     getHeroFromID() {
         console.log("Get hero from ID");
         const id = + this.route.snapshot.paramMap.get('id');
-        this.heroService.getHeroFromID(id).subscribe(hero =>this.hero = hero);
+        this.heroService.getHeroFromID(id).subscribe(heros => this.hero = heros);
+
     }
 
     addToCart(hero) {
-        console.log("add to cart", this.lastValue)
-        this.heroService.updateQuantity(this.lastValue);
+        this.heroService.addProduct(hero, this.lastValue);
+        this.heroService.updateQuantity(this.heroService.getTotalQuantity());
+        this.lastValue = hero.quantity;
     }
 }

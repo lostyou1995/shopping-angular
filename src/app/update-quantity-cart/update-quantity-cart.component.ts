@@ -14,7 +14,7 @@ export class UpdateQuantityCartComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.heroService.currentQuantity.subscribe(quantity => this.quantity += quantity);
+        this.heroService.currentQuantity.subscribe(quantity => this.quantity = quantity);
         console.log("ngOnInit - Update quantity cart", this.quantity);
     }
 

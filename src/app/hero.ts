@@ -4,6 +4,6 @@ export class Hero {
     name: String;
     image: String;
     description: String;
-    quantity: Number;
+    quantity: number;
     status: Boolean;
 }
