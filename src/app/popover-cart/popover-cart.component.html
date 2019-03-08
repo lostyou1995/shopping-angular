@@ -1,0 +1,9 @@
+<ng-template #popContent>
+    <ul>
+        <li *ngFor="let value of newOrderList">
+            <a href="#"> {{ value.name }} </a>
+        </li>
+    </ul>
+</ng-template>
+<i (click)="showCart()" class="fas fa-shopping-bag" popoverClass="width-popover-cart" placement="bottom" [ngbPopover]="popContent" [popoverTitle]="popTitle">
+</i>
