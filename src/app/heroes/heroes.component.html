@@ -16,7 +16,7 @@
     <div class='item' *ngFor='let hero of heroes'>
       <img class="image-product" src="/assets/image/{{hero.image}}"/>
 
-      <a routerLink='/heroes-detail/{{hero.id}}'>
+      <a routerLink='/heroes-detail/{{hero._id}}'>
         <span (click)='onSelect(hero, "VIEW_DETAIL")'>{{hero.name}}</span>
       </a>
 

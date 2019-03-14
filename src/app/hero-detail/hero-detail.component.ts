@@ -48,14 +48,17 @@ export class HeroDetailComponent implements OnInit {
 
     getHeroFromID() {
         console.log("Get hero from ID");
-        const id = + this.route.snapshot.paramMap.get('id');
+        const id = this.route.snapshot.paramMap.get('id');
         this.heroService.getHeroFromID(id).subscribe(heros => this.hero = heros);
 
     }
 
     addToCart(hero) {
         this.heroService.addProduct(hero, this.lastValue);
+        console.log(this.lastValue);
         this.heroService.updateQuantity(this.heroService.getTotalQuantity());
+        console.log(this.heroService.getNewOrderList());
         this.lastValue = hero.quantity;
+        console.log(hero, this.lastValue);
     }
 }

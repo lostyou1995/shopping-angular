@@ -2,6 +2,9 @@ i {
     font-size: 20px;
     opacity: 1;
 }
+i:hover {
+    opacity: 1;
+}
 .width-popover-cart {
     width: 500px;
   }

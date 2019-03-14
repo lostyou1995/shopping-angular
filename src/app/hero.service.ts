@@ -11,7 +11,7 @@ export class HeroService {
 
     private quantity = new BehaviorSubject(0);
     currentQuantity = this.quantity.asObservable();
-    urlProduct = '../assets/db-json/product.json';
+    urlProduct = 'http://localhost:6969/api/product/';
     newOrderList: Array<Hero> = [];
 
     constructor(private http: HttpClient) { 
@@ -22,13 +22,9 @@ export class HeroService {
         return this.http.get(this.urlProduct);
     }
 
-    getHeroFromID(id: number) {
-        return this.http.get(this.urlProduct)
-        .pipe (
-            map(function(res: Array<Hero>) {
-                return res.find(item => item.id === id);
-            })
-        );
+    getHeroFromID(id: String) {
+        console.log(id);
+        return this.http.get(this.urlProduct + "/findProductById/" + id);
     }
 
     updateQuantity(quantityNew: number) {
@@ -36,7 +32,7 @@ export class HeroService {
     }
 
     addProduct(product, quantity) {
-        var currentProduct = this.newOrderList.find(item => item.id === product.id);
+        var currentProduct = this.newOrderList.find(item => item._id === product._id);
         if (currentProduct) {
             currentProduct.quantity = quantity;
         } else {

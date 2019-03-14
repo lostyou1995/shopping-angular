@@ -1,5 +1,5 @@
 export class Hero {
-    id: Number;
+    _id: String;
     price: Number;
     name: String;
     image: String;
