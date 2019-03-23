@@ -12,6 +12,8 @@ export class HeroService {
     private quantity = new BehaviorSubject(0);
     currentQuantity = this.quantity.asObservable();
     urlProduct = 'http://localhost:6969/api/product/';
+    urlLogin = 'http://localhost:6969/api/auth/login/';
+
     newOrderList: Array<Hero> = [];
 
     constructor(private http: HttpClient) { 
@@ -23,7 +25,6 @@ export class HeroService {
     }
 
     getHeroFromID(id: String) {
-        console.log(id);
         return this.http.get(this.urlProduct + "/findProductById/" + id);
     }
 
@@ -51,5 +52,10 @@ export class HeroService {
             totalQuantity += item.quantity;
         }
         return totalQuantity;
+    }
+
+    login(account: any) {
+        console.log(account);
+        return this.http.post(this.urlLogin, account);
     }
 }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -13,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SliderImageComponent } from './slider-image/slider-image.component';
 import { UpdateQuantityCartComponent } from './update-quantity-cart/update-quantity-cart.component';
 import { PopoverCartComponent } from './popover-cart/popover-cart.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [
@@ -24,14 +26,17 @@ import { PopoverCartComponent } from './popover-cart/popover-cart.component';
         FooterComponent,
         SliderImageComponent,
         UpdateQuantityCartComponent,
-        PopoverCartComponent
+        PopoverCartComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        NgbModule
+        NgbModule,
+        ReactiveFormsModule,
+        FormsModule
     ],
     providers: [HttpClientModule],
     bootstrap: [AppComponent]

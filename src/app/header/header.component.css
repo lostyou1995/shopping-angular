@@ -108,15 +108,13 @@ div.number-quantity {
     position: relative;
 }
 
-div.user-login-info {
-    border: none;
-}
-
 div.number-quantity>span,
 div.user-login-info>span {
     margin: auto;
     max-width: 70px;
     opacity: 0.7;
+    border: none;
+    outline: none;
 }
 
 div.number-quantity>span:hover,
@@ -131,29 +129,4 @@ div.number-quantity>span>label {
     font-weight: 600;
     font-size: 15px;
     color: #F46036;
-}
-
-/*Format search*/
-div.area-search {
-    display: flex;
-    height: 59px;
-    border-right: 1px solid #ebebeb;
-}
-
-div.area-search>span input {
-    font-size: 20px;
-    border: none;
-    outline: none;
-    border-left: 1px solid #ebebeb;
-    padding: 0 15px 0 60px;
-}
-
-div.area-search>span {
-    display: flex;
-    position: relative;
-}
-div.area-search>span i {
-    position: absolute;
-    right: 10px;
-    top: 20px;
 }
