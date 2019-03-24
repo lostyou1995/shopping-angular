@@ -13,7 +13,7 @@ export class HeroService {
     currentQuantity = this.quantity.asObservable();
     urlProduct = 'http://localhost:6969/api/product/';
     urlLogin = 'http://localhost:6969/api/auth/login/';
-
+    urlAccount= "http://localhost:6969/api/account/";
     newOrderList: Array<Hero> = [];
 
     constructor(private http: HttpClient) { 
@@ -57,5 +57,9 @@ export class HeroService {
     login(account: any) {
         console.log(account);
         return this.http.post(this.urlLogin, account);
+    }
+
+    registerAccount(account: any) {
+        return this.http.post(this.urlAccount + "create/", account);
     }
 }
