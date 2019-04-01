@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HeroService {
-
+    private token: string;
     private quantity = new BehaviorSubject(0);
     currentQuantity = this.quantity.asObservable();
     urlProduct = 'http://localhost:6969/api/product/';
@@ -24,8 +24,8 @@ export class HeroService {
         return this.http.get(this.urlProduct);
     }
 
-    getHeroFromID(id: String) {
-        return this.http.get(this.urlProduct + "/findProductById/" + id);
+    getProductFromId(id: String) {
+        return this.http.get(this.urlProduct + "findProductById/" + id);
     }
 
     updateQuantity(quantityNew: number) {
@@ -61,5 +61,27 @@ export class HeroService {
 
     registerAccount(account: any) {
         return this.http.post(this.urlAccount + "create/", account);
+    }
+
+    isExistUsername(username: any) {
+        return this.http.get(this.urlAccount + "isExistUsername/" + username);
+    }
+
+    saveToken(token: string) {
+        this.token = token;
+        localStorage.setItem("TOKEN_USER", token);
+    }
+
+    /**
+     * @private
+     * @summary Get token when login
+     * @function getToken
+     * @returns {String} Value string token
+     */
+    getToken() {
+        if (!this.token) {
+            this.token = localStorage.getItem("TOKEN_USER");
+        }
+        return this.token;
     }
 }

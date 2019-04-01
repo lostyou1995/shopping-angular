@@ -1,14 +1,14 @@
-
 <div class="container login-container">
     <div class="row">
       <div class="col-md-6 offset-md-3 login-form-1">
             <h3>Đăng Ký</h3>
             <form (ngSubmit)="onSubmit()" [formGroup]="accountCreate">
-                <div class="form-group" *ngIf='!isValid'>
+                <div class="form-group" *ngIf='!isValid || !isValidEmail'>
                     <ngb-alert type="danger" (close)="close()">{{ message }}</ngb-alert>
                 </div>
                 <div class="form-group">
-                    <input type="text"  formControlName="username" class="form-control" placeholder="Tên đăng nhập *" value="" />
+                    <input type="text" #username  (blur)="checkUsername(username.value)" formControlName="username" class="form-control" placeholder="Tên đăng nhập *" value="" />
+                    <p *ngIf='isExistUsername' class="error-validate">{{ message }}</p>
                 </div>
                 <div class="form-group">
                     <input type="password"  formControlName="password" class="form-control" placeholder="Mật khẩu *" value="" />
@@ -19,8 +19,9 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text"  formControlName="address" class="form-control" placeholder="Địa chỉ *" value="" />
+                    <input type="are"  formControlName="address" class="form-control" placeholder="Địa chỉ *" value="" />
                 </div>
+
                 <div class="form-group" >
                     <mat-radio-group aria-label="Select an option" formControlName="gender">
                         <mat-radio-button color="primary" value="1">Nam</mat-radio-button>
@@ -37,11 +38,11 @@
                 </div>
 
                 <div class="form-group">
-                  <a href="#" class="ForgetPwd">Quên mật khẩu?</a>
+                  <p class="ForgetPwd" (click)="onChangePageClicked(3)" >Quên mật khẩu?</p>
                 </div>
 
                 <div class="form-group">
-                    <p class="ForgetPwd" (click)="onLoginClicked()">Đăng nhập</p>
+                    <p class="ForgetPwd" (click)="onChangePageClicked(1)">Đăng nhập</p>
                 </div>
             </form>
         </div>

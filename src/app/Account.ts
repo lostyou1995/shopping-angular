@@ -1,4 +1,7 @@
 export class Account {
-    username: String;
-    password: String;
+    username: string;
+    password: string;
+    address: string;
+    email: string;
+    gender: number
 }

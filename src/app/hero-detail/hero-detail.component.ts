@@ -19,7 +19,7 @@ export class HeroDetailComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.getHeroFromID();
+        this.getProductFromId();
         this.heroService.currentQuantity.subscribe(quantity => this.lastValue = quantity);
         this.lastValue = 1;
 
@@ -46,10 +46,10 @@ export class HeroDetailComponent implements OnInit {
         }
     }
 
-    getHeroFromID() {
+    getProductFromId() {
         console.log("Get hero from ID");
         const id = this.route.snapshot.paramMap.get('id');
-        this.heroService.getHeroFromID(id).subscribe(heros => this.hero = heros);
+        this.heroService.getProductFromId(id).subscribe(heros => this.hero = heros);
 
     }
 

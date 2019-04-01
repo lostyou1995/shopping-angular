@@ -16,48 +16,57 @@ enum Page {
 })
 
 export class LoginComponent implements OnInit {
-  message: any;
-  account: any;
-  isValid: Boolean = true;
-  pageId: Number = Page.LOGIN;
-  accountGroup = new FormGroup({
-    username : new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-  });
-  constructor( private heroService: HeroService) { }
+    message: any;
 
-  ngOnInit() {
+    isValid: Boolean = true;
+    isSuccess: Boolean = false;
+    typeMessage: string = "danger";
+    pageId: Number = Page.REGISTER;
 
-  }
+    accountGroup = new FormGroup({
+        username : new FormControl('', Validators.required),
+        password: new FormControl('', Validators.required),
+    });
 
-  onSubmit() {
-    if (!this.accountGroup.valid) {
-      this.isValid = false;
-      this.message = MESSAGE_ERROR.REQUIRED;
+    constructor( private heroService: HeroService) { }
 
-    } else {
-      this.isValid = true;
+    ngOnInit() {
 
-      this.account = {
-        username: this.accountGroup.value.username,
-        password: this.accountGroup.value.password
-      };
-
-      this.heroService.login(this.account).subscribe((account)=> {
-        console.log(account);
-      });
     }
-  }
 
-  close() {
-    this.isValid = true;
-  }
+    onSubmit() {
+        if (!this.accountGroup.valid) {
+            this.isValid = false;
+            this.message = MESSAGE_ERROR.REQUIRED;
 
-  transitionPage(id: number) {
-    this.pageId = id;
-  }
+        } else {
+            this.isValid = true;
 
-  fromRegister(event) {
-    this.pageId = event;
-  }
+            var createAccount = {
+                username: this.accountGroup.value.username,
+                password: this.accountGroup.value.password
+            };
+
+            this.heroService.login(createAccount).subscribe((account)=> {
+                    console.log(account);
+            });
+        }
+    }
+
+    close() {
+        this.isValid = true;
+    }
+
+    /**
+     * @private
+     * @summary Set page id current
+     * @function fromPage
+     * @param event 
+     */
+    fromPage(event) {
+        this.pageId = event.pageId;
+        this.message = event.content;
+        this.isSuccess = true;
+        this.typeMessage = "success";
+    }
 }

@@ -4,8 +4,8 @@
       <div class="col-md-6 offset-md-3 login-form-1">
             <h3>Đăng Nhập</h3>
             <form (ngSubmit)="onSubmit()" [formGroup]="accountGroup">
-                <div class="form-group" *ngIf='!isValid'>
-                        <ngb-alert type="danger" (close)="close()">{{ message }}</ngb-alert>
+                <div class="form-group" *ngIf='!isValid || isSuccess'>
+                        <ngb-alert [type]="typeMessage" (close)="close()">{{ message }}</ngb-alert>
                 </div>
                 <div class="form-group">
                     <input type="text"  formControlName="username" class="form-control" placeholder="Tên đăng nhập *" value="" />
@@ -18,15 +18,15 @@
                 </div>
 
                 <div class="form-group">
-                  <p class="ForgetPwd" (click)="transitionPage(3)">Quên mật khẩu?</p>
+                  <p class="ForgetPwd" (click)="fromPage(3)">Quên mật khẩu?</p>
                 </div>
 
                 <div class="form-group">
-                    <p class="ForgetPwd" (click)="transitionPage(2)">Đăng ký</p>
+                    <p class="ForgetPwd" (click)="fromPage(2)">Đăng ký</p>
                 </div>
             </form>
         </div>
     </div>
 </div>
-<app-register *ngIf="pageId === 2" (loginClick)="fromRegister($event)"></app-register>
-<app-forget-password *ngIf="pageId === 3"></app-forget-password>
+<app-register *ngIf="pageId === 2" (actionClick)="fromPage($event)"></app-register>
+<app-forget-password *ngIf="pageId === 3" (actionClick)="fromPage($event)"></app-forget-password>
